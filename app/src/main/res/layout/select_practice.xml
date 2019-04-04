@@ -2,23 +2,26 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android = "http://schemas.android.com/apk/res/android"
         xmlns:tools = "http://schemas.android.com/tools"
+        android:orientation = "vertical"
         android:layout_width = "match_parent"
         android:layout_height = "match_parent"
-        tools:context = ".MainActivity">
+        tools:context=".SelectPracticeActivity">
     <LinearLayout
             android:orientation = "vertical"
             android:layout_width = "match_parent"
             android:layout_height = "match_parent"
             android:gravity = "center"
             tools:ignore = "MissingConstraints">
+
         <TextView android:layout_width = "match_parent"
                   android:layout_height = "0dip"
                   android:layout_weight = "1"
-                  android:id = "@+id/txtTop"
-                  android:text = "TopPage"
+                  android:id = "@+id/txtSelectTop"
+                  android:text = "Select Practice"
                   android:textSize = "50dp"
                   android:gravity = "center"
                   tools:ignore = "HardcodedText,SpUsage" />
+
         <LinearLayout
                 android:orientation = "vertical"
                 android:layout_width = "match_parent"
@@ -26,42 +29,28 @@
                 android:layout_weight = "1"
                 android:gravity = "center">
 
-            <Button
-                    android:text = "START"
-                    android:layout_width = "wrap_content"
-                    android:layout_height = "wrap_content"
-                    android:id = "@+id/btn_start"
-                    tools:ignore = "HardcodedText" />
             <LinearLayout
                     android:orientation = "horizontal"
-                    android:layout_width = "wrap_content"
+                    android:layout_width = "match_parent"
                     android:layout_height = "wrap_content"
-                    android:gravity = "center">
+                    android:gravity = "center"
+                    tools:ignore = "UselessParent">
                 <Button
-                        android:text = "JPN"
-                        android:layout_width = "wrap_content"
+                        android:text = "word"
+                        android:layout_width = "0dip"
                         android:layout_height = "wrap_content"
-                        android:id = "@+id/btn_lang_from"
-                        tools:ignore = "HardcodedText" />
-                <TextView
-                        android:text = "To"
-                        android:layout_width = "wrap_content"
-                        android:layout_height = "wrap_content"
-                        android:id = "@+id/tv_lang_to"
-                        tools:ignore = "HardcodedText" />
+                        android:layout_weight = "1"
+                        android:id = "@+id/btn_word"
+                        tools:ignore = "ButtonStyle,HardcodedText" />
+
                 <Button
-                        android:text = "Eng"
-                        android:layout_width = "wrap_content"
+                        android:text = "conversation"
+                        android:layout_width = "0dip"
                         android:layout_height = "wrap_content"
-                        android:id = "@+id/btn_lang_to"
-                        tools:ignore = "HardcodedText" />
+                        android:layout_weight = "1"
+                        android:id = "@+id/btn_conversation"
+                        tools:ignore = "ButtonStyle,HardcodedText" />
             </LinearLayout>
-            <Button
-                    android:text = "Setting"
-                    android:layout_width = "wrap_content"
-                    android:layout_height = "wrap_content"
-                    android:id = "@+id/btn_setting"
-                    tools:ignore = "HardcodedText" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
