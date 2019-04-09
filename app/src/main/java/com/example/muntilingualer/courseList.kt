@@ -19,7 +19,7 @@ class CourseList : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         container?.removeAllViews()
-        return inflater.inflate(R.layout.fragment_course_list, container, false)
+        return inflater.inflate(R.layout.fragment_practice, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
