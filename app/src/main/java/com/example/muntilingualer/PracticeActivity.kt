@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class SelectCourseActivity : AppCompatActivity() {
+@Suppress("NAME_SHADOWING")
+class PracticeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.select_course)
+        setContentView(R.layout.activity_practice)
 
         val frgmManager = supportFragmentManager
         val frgmTransaction = frgmManager.beginTransaction()
@@ -20,13 +21,13 @@ class SelectCourseActivity : AppCompatActivity() {
         val frgmArray = arrayOf(frgm01, frgm02, frgm03)
         val arraySize = frgmArray.size -1
         var currentFrgm = frgm01
-        var position = 0
+        var position: Int
 
         frgmTransaction.add(R.id.course_list, currentFrgm)
         frgmTransaction.commit()
 
-        val btn_back = findViewById<Button>(R.id.btn_list_back)
-        btn_back.setOnClickListener {
+        val btnBack = findViewById<Button>(R.id.btn_list_back)
+        btnBack.setOnClickListener {
             val frgmTransaction = supportFragmentManager.beginTransaction()
             position = frgmArray.indexOf(currentFrgm)
             if (position == 0) {
@@ -35,12 +36,14 @@ class SelectCourseActivity : AppCompatActivity() {
             }
             currentFrgm = frgmArray[position]
 
-            frgmTransaction.replace(R.id.course_list, currentFrgm)
-            frgmTransaction.commit()
+            frgmTransaction.run {
+                replace(R.id.course_list, currentFrgm)
+                commit()
+            }
         }
 
-        val btn_next = findViewById<Button>(R.id.btn_list_next)
-        btn_next.setOnClickListener {
+        val btnNext = findViewById<Button>(R.id.btn_list_next)
+        btnNext.setOnClickListener {
             val frgmTransaction = supportFragmentManager.beginTransaction()
             position = frgmArray.indexOf(currentFrgm)
             if (position == arraySize) {
@@ -50,8 +53,10 @@ class SelectCourseActivity : AppCompatActivity() {
             currentFrgm = frgmArray[position]
 
 
-            frgmTransaction.replace(R.id.course_list, currentFrgm)
-            frgmTransaction.commit()
+            frgmTransaction.run {
+                replace(R.id.course_list, currentFrgm)
+                commit()
+            }
         }
     }
 }

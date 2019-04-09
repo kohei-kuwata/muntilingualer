@@ -12,9 +12,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btn: Button = findViewById(R.id.btn_start)
-        val intent = Intent(this, SelectPracticeActivity::class.java)
+        val intent = Intent(this, SelectPracticeTypeActivity::class.java)
         btn.setOnClickListener {
             startActivity(intent)
         }
     }
 }
+

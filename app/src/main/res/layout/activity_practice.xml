@@ -6,7 +6,7 @@
         android:layout_width = "match_parent"
         android:layout_height = "match_parent"
         android:id = "@+id/select_course"
-        tools:context = ".SelectCourseActivity">
+        tools:context = ".PracticeActivity">
     <LinearLayout
             android:orientation = "vertical"
             android:layout_width = "match_parent"
