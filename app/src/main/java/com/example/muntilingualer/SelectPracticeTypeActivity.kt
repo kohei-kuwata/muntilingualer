@@ -11,7 +11,7 @@ class SelectPracticeTypeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_select_practice_type)
 
         val btn: Button = findViewById(R.id.btn_word)
-        val intent = Intent(this, PracticeActivity::class.java)
+        val intent = Intent(this, SelectCourseActivity::class.java)
         btn.setOnClickListener {
             startActivity(intent)
         }
