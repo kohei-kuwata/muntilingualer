@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 
-class CourseList : Fragment() {
+class PracticeFragment : Fragment() {
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +39,8 @@ class CourseList : Fragment() {
     companion object {
         private const val TXT = "txt"
 
-        fun newInstance(txt: String): CourseList {
-            val courseList = CourseList()
+        fun newInstance(txt: String): PracticeFragment {
+            val courseList = PracticeFragment()
             val args = Bundle()
             args.putString(TXT, txt)
             courseList.arguments = args

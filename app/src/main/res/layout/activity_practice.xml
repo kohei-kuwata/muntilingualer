@@ -5,7 +5,6 @@
         android:orientation = "vertical"
         android:layout_width = "match_parent"
         android:layout_height = "match_parent"
-        android:id = "@+id/select_course"
         tools:context = ".PracticeActivity">
     <LinearLayout
             android:orientation = "vertical"
@@ -16,7 +15,7 @@
                 android:layout_width = "match_parent"
                 android:layout_height = "0dip"
                 android:layout_weight = "5"
-                android:id = "@+id/course_list"
+                android:id = "@+id/view_practice"
                 android:orientation = "horizontal">
 
         </LinearLayout>
