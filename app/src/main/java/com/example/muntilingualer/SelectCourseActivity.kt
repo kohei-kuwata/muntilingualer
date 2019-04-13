@@ -1,6 +1,7 @@
 package com.example.muntilingualer
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Adapter
 import android.widget.AdapterView
@@ -26,7 +27,10 @@ class SelectCourseActivity : AppCompatActivity() {
         lv.dividerHeight = 10
 
         lv.onItemClickListener = AdapterView.OnItemClickListener(function = { _, _, i, _ ->
-            Toast.makeText(this@SelectCourseActivity, "you selected " + (i + 1), Toast.LENGTH_LONG).show()
+            //Toast.makeText(this@SelectCourseActivity, "you selected " + (i + 1), Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this, PracticeActivity::class.java)
+            startActivity(intent)
         })
     }
 
@@ -57,6 +61,6 @@ class SelectCourseActivity : AppCompatActivity() {
         course.title = "title003"
         courseList.add(course)
 
-        courseItem.put("set", courseList)
+        courseItem["set"] = courseList
     }
 }
