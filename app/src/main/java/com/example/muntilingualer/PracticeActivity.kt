@@ -14,7 +14,7 @@ class PracticeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_practice)
 
         val csv = CsvReader()
-        csv.reader(applicationContext)
+        val langList = csv.readLangualgeList(applicationContext)
 
         val intent = intent
         val title = intent.getStringExtra("CourseTitle")

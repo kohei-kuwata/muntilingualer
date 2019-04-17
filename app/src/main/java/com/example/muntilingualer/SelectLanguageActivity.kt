@@ -41,20 +41,19 @@ class SelectLanguageActivity : AppCompatActivity() {
     private fun addCourse(courseItem: MutableMap<String, ArrayList<SelectCourseItem>>){
         val courseList = ArrayList<SelectCourseItem>()
 
-        var course = SelectCourseItem()
-        course.number = 1
-        course.title = "JPN"
-        courseList.add(course)
+        val csv = CsvReader()
+        val langList = csv.readLangualgeList(applicationContext)
 
-        course = SelectCourseItem()
-        course.number = 2
-        course.title = "ENG"
-        courseList.add(course)
+        var course: SelectCourseItem
+        var count = 1
+        langList.forEach{
+            course = SelectCourseItem()
+            course.number = count
+            course.title = it
+            courseList.add(course)
 
-        course = SelectCourseItem()
-        course.number = 3
-        course.title = "CNI"
-        courseList.add(course)
+            count++
+        }
 
         courseItem["set"] = courseList
     }
