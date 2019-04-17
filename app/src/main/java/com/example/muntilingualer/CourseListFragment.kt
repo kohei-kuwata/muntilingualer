@@ -10,7 +10,7 @@ import android.widget.ListView
 
 
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-class courseListFragment : Fragment() {
+class CourseListFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
