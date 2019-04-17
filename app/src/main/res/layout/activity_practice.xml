@@ -10,11 +10,19 @@
             android:orientation = "vertical"
             android:layout_width = "match_parent"
             android:layout_height = "match_parent">
+        <TextView android:layout_width = "match_parent"
+                  android:layout_height = "0dip"
+                  android:layout_weight = "1"
+                  android:gravity="center"
+                  android:textSize="20dp"
+                  android:id = "@+id/txView_practice"
+                  tools:ignore = "SpUsage" />
 
         <LinearLayout
                 android:layout_width = "match_parent"
                 android:layout_height = "0dip"
                 android:layout_weight = "5"
+                android:gravity="center"
                 android:id = "@+id/view_practice"
                 android:orientation = "horizontal">
 

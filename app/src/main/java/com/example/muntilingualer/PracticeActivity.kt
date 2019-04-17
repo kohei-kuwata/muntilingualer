@@ -1,7 +1,9 @@
 package com.example.muntilingualer
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 @Suppress("NAME_SHADOWING")
@@ -10,6 +12,12 @@ class PracticeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_practice)
+
+        val intent = intent
+        val title = intent.getStringExtra("CourseTitle")
+
+        val textView = findViewById<TextView>(R.id.txView_practice)
+        textView.text = title
 
         val frgmManager = supportFragmentManager
         val frgmTransaction = frgmManager.beginTransaction()

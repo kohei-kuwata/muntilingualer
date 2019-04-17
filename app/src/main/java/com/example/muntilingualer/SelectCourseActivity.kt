@@ -27,9 +27,10 @@ class SelectCourseActivity : AppCompatActivity() {
         lv.dividerHeight = 10
 
         lv.onItemClickListener = AdapterView.OnItemClickListener(function = { _, _, i, _ ->
-            //Toast.makeText(this@SelectCourseActivity, "you selected " + (i + 1), Toast.LENGTH_LONG).show()
+            //Toast.makeText(this@SelectCourseActivity, "you selected " + (i + 1) + ":" + courses[i].title, Toast.LENGTH_LONG).show()
 
             val intent = Intent(this, PracticeActivity::class.java)
+            intent.putExtra("CourseTitle", courses[i].title)
             startActivity(intent)
         })
     }
