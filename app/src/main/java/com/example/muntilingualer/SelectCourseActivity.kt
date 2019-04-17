@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.marginTop
 
 class SelectCourseActivity : AppCompatActivity() {
     private val courseItem = HashMap<String, ArrayList<SelectCourseItem>>()
@@ -23,8 +24,6 @@ class SelectCourseActivity : AppCompatActivity() {
         val courses = getCourse("set")
         val courseAdapter = SelectCourseAdapter(courses, this)
         lv.adapter = courseAdapter
-
-        lv.dividerHeight = 10
 
         lv.onItemClickListener = AdapterView.OnItemClickListener(function = { _, _, i, _ ->
             //Toast.makeText(this@SelectCourseActivity, "you selected " + (i + 1) + ":" + courses[i].title, Toast.LENGTH_LONG).show()

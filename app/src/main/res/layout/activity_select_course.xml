@@ -5,8 +5,7 @@
         android:orientation = "vertical"
         android:layout_width = "match_parent"
         android:layout_height = "match_parent"
-        android:id="@+id/view_select_course"
-        tools:context=".SelectCourseActivity">
+        android:id="@+id/view_select_course">
 
     <TextView android:layout_width = "match_parent"
               android:layout_height = "0dip"
@@ -19,6 +18,7 @@
     <ListView android:layout_width = "match_parent"
               android:layout_height = "0dip"
               android:layout_weight = "7"
+              android:dividerHeight="10dp"
               android:id="@+id/lView_course_list" />
 
 </LinearLayout>
