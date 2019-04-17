@@ -13,6 +13,9 @@ class PracticeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_practice)
 
+        val csv = CsvReader()
+        csv.reader(applicationContext)
+
         val intent = intent
         val title = intent.getStringExtra("CourseTitle")
 
