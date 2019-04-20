@@ -38,11 +38,9 @@
                     android:layout_height = "wrap_content"
                     android:gravity = "center">
                 <Button
-                        android:text = "JPN"
                         android:layout_width = "wrap_content"
                         android:layout_height = "wrap_content"
-                        android:id = "@+id/btn_lang_from"
-                        tools:ignore = "HardcodedText" />
+                        android:id = "@+id/btn_lang_from" />
                 <TextView
                         android:text = "To"
                         android:layout_width = "wrap_content"
@@ -50,11 +48,9 @@
                         android:id = "@+id/tv_lang_to"
                         tools:ignore = "HardcodedText" />
                 <Button
-                        android:text = "Eng"
                         android:layout_width = "wrap_content"
                         android:layout_height = "wrap_content"
-                        android:id = "@+id/btn_lang_to"
-                        tools:ignore = "HardcodedText" />
+                        android:id = "@+id/btn_lang_to"/>
             </LinearLayout>
             <Button
                     android:text = "Setting"

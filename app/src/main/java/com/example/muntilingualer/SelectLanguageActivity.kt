@@ -23,7 +23,7 @@ class SelectLanguageActivity : AppCompatActivity() {
 
         lv.onItemClickListener = AdapterView.OnItemClickListener(function = { _, _, i, _ ->
 
-            intent.putExtra("LANG", courses[i].title)
+            intent.putExtra("LANG", courses[i].id)
             setResult(intent.getIntExtra("btn_code", 0 ), intent)
             finish()
         })
@@ -42,14 +42,16 @@ class SelectLanguageActivity : AppCompatActivity() {
         val courseList = ArrayList<SelectCourseItem>()
 
         val csv = CsvReader()
+        val langFolders = csv.readLangualgeFolder(applicationContext)
         val langList = csv.readLangualgeList(applicationContext)
 
         var course: SelectCourseItem
         var count = 1
-        langList.forEach{
+        langFolders.forEach{
             course = SelectCourseItem()
             course.number = count
-            course.title = it
+            course.id = it
+            course.title = langList[it]
             courseList.add(course)
 
             count++
