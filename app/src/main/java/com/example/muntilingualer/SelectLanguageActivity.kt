@@ -1,8 +1,6 @@
 package com.example.muntilingualer
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.AdapterView
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
@@ -42,8 +40,8 @@ class SelectLanguageActivity : AppCompatActivity() {
         val courseList = ArrayList<SelectCourseItem>()
 
         val csv = CsvReader()
-        val langFolders = csv.readLangualgeFolder(applicationContext)
-        val langList = csv.readLangualgeList(applicationContext)
+        val langFolders = csv.readLanguageFolder(applicationContext)
+        val langList = csv.readLanguageList(applicationContext)
 
         var course: SelectCourseItem
         var count = 1

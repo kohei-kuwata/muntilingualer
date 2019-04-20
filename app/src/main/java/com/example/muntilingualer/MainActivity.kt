@@ -3,7 +3,6 @@ package com.example.muntilingualer
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val csv = CsvReader()
-        LANG_LIST = csv.readLangualgeList(applicationContext)
+        LANG_LIST = csv.readLanguageList(applicationContext)
 
         val intentLang = Intent(this, SelectLanguageActivity::class.java)
 

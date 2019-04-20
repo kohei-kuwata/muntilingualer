@@ -7,7 +7,7 @@ import java.util.*
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class CsvReader {
-    fun readLangualgeFolder(context: Context): List<String> {
+    fun readLanguageFolder(context: Context): List<String> {
         var langFolders: List<String> = ArrayList()
         try {
             langFolders = context.assets.list("LANG").toList()
@@ -18,7 +18,7 @@ class CsvReader {
         return langFolders
     }
 
-    fun readLangualgeList(context: Context): MutableMap<String, String> {
+    fun readLanguageList(context: Context): MutableMap<String, String> {
         val langList: MutableMap<String, String> = mutableMapOf()
         try {
             context.assets.open("LANG_LIST").reader(charset=Charsets.UTF_8).forEachLine {
