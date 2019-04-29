@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        global = this.application as Global
 
         val btn: Button = findViewById(R.id.btn_start)
         val intent = Intent(this, SelectPracticeTypeActivity::class.java)
@@ -31,37 +32,30 @@ class MainActivity : AppCompatActivity() {
         val intentLang = Intent(this, SelectLanguageActivity::class.java)
 
         BTN_LANG_FROM = findViewById(R.id.btn_lang_from)
-        BTN_LANG_FROM.text = LANG_LIST["JP"]
+        BTN_LANG_FROM.text = LANG_LIST[global.gFromLang]
         BTN_LANG_FROM.setOnClickListener {
             intentLang.putExtra("btn_code", CODE_FROM)
             startActivityForResult(intentLang, CODE_REQUEST)
         }
 
         BTN_LANG_TO = findViewById(R.id.btn_lang_to)
-        BTN_LANG_TO.text = LANG_LIST["ENUS"]
+        BTN_LANG_TO.text = LANG_LIST[global.gToLang]
         BTN_LANG_TO.setOnClickListener {
             intentLang.putExtra("btn_code", CODE_TO)
             startActivityForResult(intentLang, CODE_REQUEST)
         }
-
-        global = this.application as Global
-        setLang()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == CODE_REQUEST) {
             if (resultCode == CODE_FROM) {
-                BTN_LANG_FROM.text = LANG_LIST[data?.getStringExtra("LANG")]
+                global.gFromLang = data?.getStringExtra("LANG").toString()
+                BTN_LANG_FROM.text = LANG_LIST[global.gFromLang]
             }else if (resultCode == CODE_TO) {
-                BTN_LANG_TO.text = LANG_LIST[data?.getStringExtra("LANG")]
+                global.gToLang = data?.getStringExtra("LANG").toString()
+                BTN_LANG_TO.text = LANG_LIST[global.gToLang]
             }
         }
-        setLang()
-    }
-
-    private fun setLang(){
-        global.gFromLang = BTN_LANG_FROM.text as String
-        global.gToLang = BTN_LANG_TO.text as String
     }
 }
 
