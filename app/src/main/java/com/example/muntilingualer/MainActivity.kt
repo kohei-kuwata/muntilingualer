@@ -3,6 +3,7 @@ package com.example.muntilingualer
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var BTN_LANG_FROM: Button
     private lateinit var BTN_LANG_TO: Button
     private lateinit var LANG_LIST: MutableMap<String, String>
+    private lateinit var global : Global
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +43,9 @@ class MainActivity : AppCompatActivity() {
             intentLang.putExtra("btn_code", CODE_TO)
             startActivityForResult(intentLang, CODE_REQUEST)
         }
+
+        global = this.application as Global
+        setLang()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -51,6 +56,12 @@ class MainActivity : AppCompatActivity() {
                 BTN_LANG_TO.text = LANG_LIST[data?.getStringExtra("LANG")]
             }
         }
+        setLang()
+    }
+
+    private fun setLang(){
+        global.gFromLang = BTN_LANG_FROM.text as String
+        global.gToLang = BTN_LANG_TO.text as String
     }
 }
 

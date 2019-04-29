@@ -3,21 +3,20 @@ package com.example.muntilingualer
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ListView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.marginTop
 
 class SelectCourseActivity : AppCompatActivity() {
     private val courseItem = HashMap<String, ArrayList<SelectCourseItem>>()
+    private lateinit var global : Global
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_course)
 
+        global = this.application as Global
         loadCourse()
 
         val lv = findViewById<ListView>(R.id.lView_course_list)
@@ -48,7 +47,7 @@ class SelectCourseActivity : AppCompatActivity() {
 
         var course = SelectCourseItem()
         course.number = 1
-        course.title = "title001"
+        course.title = global.gFromLang
         courseList.add(course)
 
         course = SelectCourseItem()
