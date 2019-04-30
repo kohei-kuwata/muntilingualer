@@ -2,8 +2,8 @@ package com.example.muntilingualer
 
 import android.os.Bundle
 import android.widget.AdapterView
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.ListView as ListView1
 
 class SelectLanguageActivity : AppCompatActivity() {
     private val courseItem = HashMap<String, ArrayList<SelectCourseItem>>()
@@ -14,7 +14,7 @@ class SelectLanguageActivity : AppCompatActivity() {
 
         loadCourse()
 
-        val lv = findViewById<ListView>(R.id.lView_select_language)
+        val lv = findViewById<ListView1>(R.id.lView_select_language)
         val courses = getCourse("set")
         val courseAdapter = SelectCourseAdapter(courses, this)
         lv.adapter = courseAdapter

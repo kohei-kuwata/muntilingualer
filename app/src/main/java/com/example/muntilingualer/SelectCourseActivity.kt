@@ -3,9 +3,10 @@ package com.example.muntilingualer
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.AdapterView
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.ListView as ListView1
 
 class SelectCourseActivity : AppCompatActivity() {
     private val courseItem = HashMap<String, ArrayList<SelectCourseItem>>()
@@ -19,7 +20,7 @@ class SelectCourseActivity : AppCompatActivity() {
         global = this.application as Global
         loadCourse()
 
-        val lv = findViewById<ListView>(R.id.lView_course_list)
+        val lv = findViewById<ListView1>(R.id.lView_course_list)
         val courses = getCourse("set")
         val courseAdapter = SelectCourseAdapter(courses, this)
         lv.adapter = courseAdapter
@@ -45,20 +46,19 @@ class SelectCourseActivity : AppCompatActivity() {
     private fun addCourse(courseItem: MutableMap<String, ArrayList<SelectCourseItem>>){
         val courseList = ArrayList<SelectCourseItem>()
 
-        var course = SelectCourseItem()
-        course.number = 1
-        course.title = global.gFromLang
-        courseList.add(course)
+        val csv = CsvReader()
+        val courseListData: MutableMap<String, MutableMap<String, String>> = csv.readCourseList(applicationContext, "COURSE_LIST")
 
-        course = SelectCourseItem()
-        course.number = 2
-        course.title = "title002"
-        courseList.add(course)
+        var course: SelectCourseItem
 
-        course = SelectCourseItem()
-        course.number = 3
-        course.title = "title003"
-        courseList.add(course)
+        courseListData.forEach { (t, u) ->
+            Log.d("forEach", t)
+            Log.d("forEach", u.toString())
+            course = SelectCourseItem()
+            course.number = t.toInt()
+            course.title = u[global.gFromLang]
+            courseList.add(course)
+        }
 
         courseItem["set"] = courseList
     }
