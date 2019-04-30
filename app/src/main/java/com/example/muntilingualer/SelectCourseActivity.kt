@@ -34,9 +34,13 @@ class SelectCourseActivity : AppCompatActivity() {
         })
     }
 
-    private fun getCourse(couseName: String): ArrayList<SelectCourseItem>{
-        val titleName = courseItem[couseName]
-        if (titleName != null) return titleName else return ArrayList<SelectCourseItem>()
+    private fun getCourse(courseName: String): ArrayList<SelectCourseItem>{
+        val titleName = courseItem[courseName]
+        if (titleName != null) {
+            return titleName
+        } else {
+            return ArrayList<SelectCourseItem>()
+        }
     }
 
     private fun loadCourse() {
