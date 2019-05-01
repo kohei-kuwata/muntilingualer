@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 
 class PracticeFragment : Fragment() {
+    lateinit var layout: LinearLayout
+
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +44,17 @@ class PracticeFragment : Fragment() {
         practiceFromLangTxt.text = practiceList[0]
         practiceToLangTxt.text = practiceList[1]
         practiceToLangPronunciation.text = practiceList[2]
+
+        layout = view.findViewById(R.id.practice_to_lang_layout)
+        layout.visibility = View.INVISIBLE
+    }
+
+    fun showToText(){
+        if (layout.visibility != View.VISIBLE){
+            layout.visibility = View.VISIBLE
+        } else {
+            layout.visibility = View.INVISIBLE
+        }
     }
 
     companion object {

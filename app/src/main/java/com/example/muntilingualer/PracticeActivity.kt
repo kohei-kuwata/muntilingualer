@@ -1,13 +1,10 @@
 package com.example.muntilingualer
 
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 
 @Suppress("NAME_SHADOWING")
@@ -31,6 +28,12 @@ class PracticeActivity : AppCompatActivity() {
         val frgmTransaction = frgmManager.beginTransaction()
         frgmTransaction.add(R.id.view_practice, frgmArray[0])
         frgmTransaction.commit()
+
+        val btnAnswer = findViewById<Button>(R.id.btn_answer)
+        position = frgmArray.indexOf(currentFrgm)
+        btnAnswer.setOnClickListener {
+            frgmArray[position].showToText()
+        }
 
         val btnBack = findViewById<Button>(R.id.btn_list_back)
         btnBack.setOnClickListener {
@@ -57,7 +60,6 @@ class PracticeActivity : AppCompatActivity() {
                 position += 1
             }
             currentFrgm = frgmArray[position]
-
 
             frgmTransaction.run {
                 replace(R.id.view_practice, currentFrgm)
