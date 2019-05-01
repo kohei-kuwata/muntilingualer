@@ -13,8 +13,8 @@
         <TextView android:layout_width = "match_parent"
                   android:layout_height = "0dip"
                   android:layout_weight = "1"
-                  android:gravity="center"
-                  android:textSize="20dp"
+                  android:gravity = "center"
+                  android:textSize = "20dp"
                   android:id = "@+id/txView_practice"
                   tools:ignore = "SpUsage" />
 
@@ -31,13 +31,22 @@
                 android:layout_width = "match_parent"
                 android:layout_height = "0dip"
                 android:layout_weight = "1"
-                android:gravity = "center">
+                android:layout_marginBottom="15dp"
+                android:gravity = "center_horizontal|bottom">
             <Button
                     android:layout_width = "wrap_content"
                     android:layout_height = "wrap_content"
                     android:id = "@+id/btn_list_back"
                     android:text = "Back"
                     android:textSize = "20dp"
+                    tools:ignore = "ButtonStyle,HardcodedText,OnClick,SpUsage" />
+            <Button
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    android:layout_margin = "1dp"
+                    android:id = "@+id/btn_answer"
+                    android:text = "Answer"
+                    android:textSize = "25dp"
                     tools:ignore = "ButtonStyle,HardcodedText,OnClick,SpUsage" />
             <Button
                     android:layout_width = "wrap_content"

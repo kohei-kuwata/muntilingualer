@@ -1,11 +1,12 @@
 package com.example.muntilingualer
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 
 
 class PracticeFragment : Fragment() {
@@ -22,27 +23,33 @@ class PracticeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_practice, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val args = arguments
-        val viewTxt = if (args == null) {
-            ""
+        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+        val practiceList: ArrayList<String> = if (args == null) {
+            arrayListOf()
         } else {
-            args.getString(TXT)
+            args.getStringArrayList(LIST)
         }
 
-        val listTextView = view.findViewById<TextView>(R.id.frgm_list_txt)
-        listTextView.text = viewTxt
+        val practiceFromLangTxt = view.findViewById<TextView>(R.id.practice_from_lang_txt)
+        val practiceToLangTxt = view.findViewById<TextView>(R.id.practice_to_lang_txt)
+        val practiceToLangPronunciation = view.findViewById<TextView>(R.id.practice_to_lang_pronunciation)
+        practiceFromLangTxt.text = practiceList[0]
+        practiceToLangTxt.text = practiceList[1]
+        practiceToLangPronunciation.text = practiceList[2]
     }
 
     companion object {
-        private const val TXT = "txt"
+        private const val LIST = "list"
 
-        fun newInstance(txt: String): PracticeFragment {
+        fun newInstance(arrayList: ArrayList<String>): PracticeFragment {
             val courseList = PracticeFragment()
             val args = Bundle()
-            args.putString(TXT, txt)
+            args.putStringArrayList(LIST, arrayList)
             courseList.arguments = args
             return courseList
 
