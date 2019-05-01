@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.ListView as ListView1
 
 class SelectLanguageActivity : AppCompatActivity() {
-    private val courseItem = HashMap<String, ArrayList<SelectCourseItem>>()
+    private val courseItem = HashMap<String, ArrayList<SelectPracticeItem>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,18 +16,18 @@ class SelectLanguageActivity : AppCompatActivity() {
 
         val lv = findViewById<ListView1>(R.id.lView_select_language)
         val courses = getCourse("set")
-        val courseAdapter = SelectCourseAdapter(courses, this)
+        val courseAdapter = SelectPracticeAdapter(courses, this)
         lv.adapter = courseAdapter
 
         lv.onItemClickListener = AdapterView.OnItemClickListener(function = { _, _, i, _ ->
 
-            intent.putExtra("LANG", courses[i].id)
+            intent.putExtra("LANG", courses[i].practiceItemId)
             setResult(intent.getIntExtra("btn_code", 0 ), intent)
             finish()
         })
     }
 
-    private fun getCourse(courseName: String): ArrayList<SelectCourseItem>{
+    private fun getCourse(courseName: String): ArrayList<SelectPracticeItem>{
         val titleName = courseItem[courseName]
         return titleName ?: ArrayList()
     }
@@ -36,26 +36,26 @@ class SelectLanguageActivity : AppCompatActivity() {
         addCourse(courseItem)
     }
 
-    private fun addCourse(courseItem: MutableMap<String, ArrayList<SelectCourseItem>>){
-        val courseList = ArrayList<SelectCourseItem>()
+    private fun addCourse(practiceItem: MutableMap<String, ArrayList<SelectPracticeItem>>){
+        val courseList = ArrayList<SelectPracticeItem>()
 
         val csv = CsvReader()
         val langFolders = csv.readLanguageFolder(applicationContext)
         val langList = csv.readLanguageList(applicationContext)
 
-        var course: SelectCourseItem
+        var practice: SelectPracticeItem
         var count = 1
         langFolders.forEach{
-            course = SelectCourseItem()
-            course.number = count
-            course.id = it
-            course.title = langList[it]
-            courseList.add(course)
+            practice = SelectPracticeItem()
+            practice.number = count
+            practice.practiceItemId = it
+            practice.title = langList[it]
+            courseList.add(practice)
 
             count++
         }
 
-        courseItem["set"] = courseList
+        practiceItem["set"] = courseList
     }
 
 }

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 
-class SelectCourseAdapter(items: ArrayList<SelectCourseItem>, ctx: Context) : ArrayAdapter<SelectCourseItem>(ctx, R.layout.layout_select_course_item, items) {
+class SelectPracticeAdapter(items: ArrayList<SelectPracticeItem>, ctx: Context) : ArrayAdapter<SelectPracticeItem>(ctx, R.layout.layout_select_practice_item, items) {
     private class CourseItemViewHolder {
         internal var number: TextView? = null
         internal var title: TextView? = null
@@ -19,19 +19,19 @@ class SelectCourseAdapter(items: ArrayList<SelectCourseItem>, ctx: Context) : Ar
 
         if (view == null) {
             val inflater = LayoutInflater.from(context)
-            view = inflater.inflate(R.layout.layout_select_course_item, parent, false)
+            view = inflater.inflate(R.layout.layout_select_practice_item, parent, false)
 
             viewHolder = CourseItemViewHolder()
-            viewHolder.number = view!!.findViewById(R.id.select_course_item_number) as TextView
-            viewHolder.title = view.findViewById(R.id.select_course_item_title) as TextView
+            viewHolder.number = view!!.findViewById(R.id.select_practice_item_number) as TextView
+            viewHolder.title = view.findViewById(R.id.select_practice_item_title) as TextView
 
         } else {
             viewHolder = view.tag as CourseItemViewHolder
         }
 
-        val course = getItem(position)
-        viewHolder.number!!.text = course!!.number.toString()
-        viewHolder.title!!.text = course.title
+        val selectPracticeItem = getItem(position)
+        viewHolder.number!!.text = selectPracticeItem!!.number.toString()
+        viewHolder.title!!.text = selectPracticeItem.title
 
         view.tag = viewHolder
 

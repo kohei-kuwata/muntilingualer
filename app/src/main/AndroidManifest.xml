@@ -19,9 +19,9 @@
                 <category android:name = "android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name = ".SelectPracticeTypeActivity">
+        <activity android:name = ".SelectCourseTypeActivity">
         </activity>
-        <activity android:name = ".SelectCourseActivity">
+        <activity android:name = ".SelectPracticeActivity">
         </activity>
         <activity android:name = ".PracticeActivity">
         </activity>

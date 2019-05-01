@@ -10,7 +10,7 @@
               android:layout_weight = "1"
               android:textSize="25dp"
               android:gravity = "center"
-              android:id = "@+id/select_course_item_number"
+              android:id = "@+id/select_practice_item_number"
               tools:ignore = "SpUsage" />
 
     <TextView android:layout_width = "0dip"
@@ -18,7 +18,7 @@
               android:layout_weight = "9"
               android:textSize="25dp"
               android:gravity = "left"
-              android:id = "@+id/select_course_item_title"
+              android:id = "@+id/select_practice_item_title"
               tools:ignore = "RtlHardcoded,SpUsage" />
 
 </LinearLayout>

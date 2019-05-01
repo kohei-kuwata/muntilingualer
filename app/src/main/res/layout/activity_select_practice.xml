@@ -5,12 +5,12 @@
         android:orientation = "vertical"
         android:layout_width = "match_parent"
         android:layout_height = "match_parent"
-        android:id="@+id/view_select_course">
+        android:id="@+id/view_select_practice">
 
     <TextView android:layout_width = "match_parent"
               android:layout_height = "0dip"
               android:layout_weight = "1"
-              android:text = "Select Course"
+              android:text = "Select Practice"
               android:textSize = "50dp"
               android:gravity = "center"
               tools:ignore = "HardcodedText,SpUsage" />
@@ -19,6 +19,6 @@
               android:layout_height = "0dip"
               android:layout_weight = "7"
               android:dividerHeight="10dp"
-              android:id="@+id/lView_course_list" />
+              android:id="@+id/lView_practice_list" />
 
 </LinearLayout>

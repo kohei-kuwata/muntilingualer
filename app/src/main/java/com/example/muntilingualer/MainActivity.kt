@@ -3,7 +3,6 @@ package com.example.muntilingualer
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         global = this.application as Global
 
         val btn: Button = findViewById(R.id.btn_start)
-        val intent = Intent(this, SelectPracticeTypeActivity::class.java)
+        val intent = Intent(this, SelectCourseTypeActivity::class.java)
         btn.setOnClickListener {
             startActivity(intent)
         }
