@@ -70,8 +70,11 @@ class PracticeActivity : AppCompatActivity() {
     fun readPracticeData(): MutableList<PracticeFragment> {
         val global = this.application as Global
 
-        val fromPracticeFile = "LANG/" + global.gFromLang + "/" + global.gFromLang + "-01-00001"
-        val toPracticeFile   = "LANG/" + global.gToLang   + "/" + global.gToLang   + "-01-00001"
+        Log.d("MenuID", global.MenuId)
+        Log.d("PracticeID", global.practiceId)
+        val practiceFileId = "-" + global.practiceId + "-" + global.MenuId
+        val fromPracticeFile = "LANG/" + global.gFromLang + "/" + global.gFromLang + practiceFileId
+        val toPracticeFile   = "LANG/" + global.gToLang   + "/" + global.gToLang   + practiceFileId
 
         val practiceFragmentArray = mutableListOf<PracticeFragment>()
         var practiceArrayList: ArrayList<String>

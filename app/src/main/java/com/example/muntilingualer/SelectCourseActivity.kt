@@ -28,6 +28,8 @@ class SelectCourseActivity : AppCompatActivity() {
         lv.onItemClickListener = AdapterView.OnItemClickListener(function = { _, _, i, _ ->
             //Toast.makeText(this@SelectCourseActivity, "you selected " + (i + 1) + ":" + courses[i].title, Toast.LENGTH_LONG).show()
 
+            global.MenuId = (i + 1).toString().padStart(5, '0')
+
             val intent = Intent(this, PracticeActivity::class.java)
             intent.putExtra("CourseTitle", courses[i].title)
             startActivity(intent)
@@ -39,7 +41,7 @@ class SelectCourseActivity : AppCompatActivity() {
         if (titleName != null) {
             return titleName
         } else {
-            return ArrayList<SelectCourseItem>()
+            return ArrayList()
         }
     }
 
