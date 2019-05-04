@@ -1,4 +1,28 @@
-id,word,pronunciation
-001,1 One,One
-002,2 Two,Two
-003,3 Tree,Tree
+id,word,pronuciation
+001,0,zero
+002,1,one
+003,2,two
+004,3,three
+005,4,four
+006,5,five
+007,6,six
+008,7,seven
+009,8,eight
+010,9,nine
+011,10,ten
+012,11,eleven
+013,12,twelve
+014,13,thirteen
+015,14,fourteen
+016,15,fifteen
+017,16,sixteen
+018,17,seventeen
+019,18,eighteen
+020,19,nineteen
+021,20,twenty
+022,100,one hundred
+023,1'000,thousand
+024,10'000,ten thousand
+025,1'000'000,million
+026,100'000'000,one hundred million
+027,1'000'000'000,billion
