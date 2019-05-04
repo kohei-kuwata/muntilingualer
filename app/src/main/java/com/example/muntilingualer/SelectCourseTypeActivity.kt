@@ -11,10 +11,17 @@ class SelectCourseTypeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_select_course_type)
 
         val global = this.application as Global
-        val btn: Button = findViewById(R.id.btn_word)
+
+        val btnWord: Button = findViewById(R.id.btn_word)
         val intent = Intent(this, SelectPracticeActivity::class.java)
-        btn.setOnClickListener {
-            global.practiceId = "01"
+        btnWord.setOnClickListener {
+            global.gCourseId = "01"
+            startActivity(intent)
+        }
+
+        val btnConversation: Button = findViewById(R.id.btn_conversation)
+        btnConversation.setOnClickListener {
+            global.gCourseId = "02"
             startActivity(intent)
         }
     }

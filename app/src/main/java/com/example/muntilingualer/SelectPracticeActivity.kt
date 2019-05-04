@@ -26,7 +26,7 @@ class SelectPracticeActivity : AppCompatActivity() {
         lv.adapter = selectPracticeAdapter
 
         lv.onItemClickListener = AdapterView.OnItemClickListener(function = { _, _, i, _ ->
-            global.MenuId = (i + 1).toString().padStart(5, '0')
+            global.gPracticeId = (i + 1).toString().padStart(5, '0')
 
             val intent = Intent(this, PracticeActivity::class.java)
             intent.putExtra("CourseTitle", practiceArrayList[i].title)
@@ -50,8 +50,13 @@ class SelectPracticeActivity : AppCompatActivity() {
     private fun addPracticeItem(practiceItem: MutableMap<String, ArrayList<SelectPracticeItem>>){
         val practiceItemList = ArrayList<SelectPracticeItem>()
 
+        var targetCourseFile = "COURSE_LIST_WORD"
+        if (global.gCourseId === "02") {
+            targetCourseFile = "COURSE_LIST_CONVERSATION"
+        }
+
         val csv = CsvReader()
-        val practiceItemListData: MutableMap<String, MutableMap<String, String>> = csv.readCourseList(applicationContext, "COURSE_LIST")
+        val practiceItemListData: MutableMap<String, MutableMap<String, String>> = csv.readCourseList(applicationContext, targetCourseFile)
 
         var selectPracticeItem: SelectPracticeItem
 
