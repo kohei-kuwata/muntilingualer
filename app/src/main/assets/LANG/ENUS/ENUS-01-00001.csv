@@ -21,8 +21,8 @@ id,word,pronuciation
 020,19,nineteen
 021,20,twenty
 022,100,one hundred
-023,1'000,thousant
-024,10'000,ten thousant
+023,1'000,thousand
+024,10'000,ten thousand
 025,1'000'000,million
 026,100'000'000,one hundred million
 027,1'000'000'000,billion
