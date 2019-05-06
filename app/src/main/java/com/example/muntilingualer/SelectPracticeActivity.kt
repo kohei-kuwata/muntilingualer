@@ -61,11 +61,14 @@ class SelectPracticeActivity : AppCompatActivity() {
         var selectPracticeItem: SelectPracticeItem
 
         practiceItemListData.forEach { (t, u) ->
-            Log.d("forEach", t)
-            Log.d("forEach", u.toString())
             selectPracticeItem = SelectPracticeItem()
             selectPracticeItem.number = t.toInt()
-            selectPracticeItem.title = u[global.gFromLang]
+
+            if (global.gFromLang === "JP") {
+                selectPracticeItem.title = u[global.gFromLang]
+            } else {
+                selectPracticeItem.title = u["ENUS"]
+            }
             practiceItemList.add(selectPracticeItem)
         }
 

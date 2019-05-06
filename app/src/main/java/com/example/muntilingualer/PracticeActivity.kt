@@ -75,6 +75,8 @@ class PracticeActivity : AppCompatActivity() {
         val practiceFileId = "-" + global.gCourseId + "-" + global.gPracticeId + ".csv"
         val fromPracticeFile = "LANG/" + global.gFromLang + "/" + global.gFromLang + practiceFileId
         val toPracticeFile   = "LANG/" + global.gToLang   + "/" + global.gToLang   + practiceFileId
+        Log.d("from", fromPracticeFile)
+        Log.d("to", toPracticeFile)
 
         val practiceFragmentArray = mutableListOf<PracticeFragment>()
         var practiceArrayList: ArrayList<String>
@@ -82,6 +84,8 @@ class PracticeActivity : AppCompatActivity() {
         val csv = CsvReader()
         val fromPracticeCSV = csv.readPracticeCsv(this, fromPracticeFile)
         val toPracticeCSV = csv.readPracticeCsv(this, toPracticeFile)
+        Log.d("fromCSV", fromPracticeCSV.toString())
+        Log.d("toCSV", toPracticeCSV.toString())
 
         fromPracticeCSV.forEach { (t, u) ->
             practiceArrayList = arrayListOf()
