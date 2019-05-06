@@ -1,0 +1,28 @@
+id,word,pronuciation
+001,0,cero
+002,1,uno
+003,2,dos
+004,3,tres
+005,4,cuatro
+006,5,cinco
+007,6,seis
+008,7,siete
+009,8,ocho
+010,9,nueve
+011,10,diez
+012,11,once
+013,12,doce
+014,13,trece
+015,14,catorce
+016,15,quince
+017,16,dieciseis
+018,17,diecisiete
+019,18,dieciocho
+020,19,diecinueve
+021,20,veinte
+022,100,cien
+023,1'000,mil
+024,10'000,dies mil
+025,1'000'000,un millon
+026,100'000'000,cien millones
+027,1'000'000'000,billones
