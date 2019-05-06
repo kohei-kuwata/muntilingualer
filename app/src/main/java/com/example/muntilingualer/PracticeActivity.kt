@@ -72,8 +72,6 @@ class PracticeActivity : AppCompatActivity() {
     fun readPracticeData(): MutableList<PracticeFragment> {
         val global = this.application as Global
 
-        Log.d("MenuID", global.gPracticeId)
-        Log.d("PracticeID", global.gCourseId)
         val practiceFileId = "-" + global.gCourseId + "-" + global.gPracticeId
         val fromPracticeFile = "LANG/" + global.gFromLang + "/" + global.gFromLang + practiceFileId
         val toPracticeFile   = "LANG/" + global.gToLang   + "/" + global.gToLang   + practiceFileId
@@ -86,14 +84,19 @@ class PracticeActivity : AppCompatActivity() {
         val toPracticeCSV = csv.readPracticeCsv(this, toPracticeFile)
 
         fromPracticeCSV.forEach { (t, u) ->
-            Log.d("multi", u.toString())
-            Log.d("keys", u.keys.toString())
             practiceArrayList = arrayListOf()
             practiceArrayList.add(u["word"].toString())
-            practiceArrayList.add(toPracticeCSV[t]!!["word"].toString())
-            practiceArrayList.add(toPracticeCSV[t]!!["pronunciation"].toString())
 
-            fragment= PracticeFragment.newInstance(practiceArrayList)
+            val constant = Constant()
+            if (constant.FLAG_LANGUAGES.contains(global.gToLang)){
+                practiceArrayList.add(toPracticeCSV[t]!!["pronunciation"].toString())
+                practiceArrayList.add("")
+            } else {
+                practiceArrayList.add(toPracticeCSV[t]!!["word"].toString())
+                practiceArrayList.add(toPracticeCSV[t]!!["pronunciation"].toString())
+            }
+
+            fragment = PracticeFragment.newInstance(practiceArrayList)
             practiceFragmentArray.add(fragment)
         }
 
