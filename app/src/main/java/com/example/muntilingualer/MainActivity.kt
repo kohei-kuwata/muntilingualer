@@ -4,13 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.beardedhen.androidbootstrap.BootstrapButton
 
 class MainActivity : AppCompatActivity() {
     private val CODE_REQUEST = 1
     private val CODE_FROM = 0
     private val CODE_TO = 1
-    private lateinit var BTN_LANG_FROM: Button
-    private lateinit var BTN_LANG_TO: Button
+    private lateinit var BTN_LANG_FROM: BootstrapButton
+    private lateinit var BTN_LANG_TO: BootstrapButton
     private lateinit var LANG_LIST: MutableMap<String, String>
     private lateinit var global : Global
 
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         global = this.application as Global
 
-        val btn: Button = findViewById(R.id.btn_start)
+        val btn: BootstrapButton = findViewById(R.id.btn_start)
         val intent = Intent(this, SelectCourseTypeActivity::class.java)
         btn.setOnClickListener {
             startActivity(intent)
