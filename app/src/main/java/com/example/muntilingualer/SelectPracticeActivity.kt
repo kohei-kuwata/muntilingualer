@@ -64,7 +64,7 @@ class SelectPracticeActivity : AppCompatActivity() {
             selectPracticeItem = SelectPracticeItem()
             selectPracticeItem.number = t.toInt()
 
-            if (global.gFromLang === "JP") {
+            if (global.gFromLang == "JP") {
                 selectPracticeItem.title = u[global.gFromLang]
             } else {
                 selectPracticeItem.title = u["ENUS"]

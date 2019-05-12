@@ -71,7 +71,6 @@ class CsvReader {
         var loopFirstFlag = true
         try {
             context.assets.open(fileName).reader(charset=Charsets.UTF_8).forEachLine {
-                Log.v("csv Log", it)
 
                 val lineArray = it.split(",").toMutableList()
                 if (loopFirstFlag){
