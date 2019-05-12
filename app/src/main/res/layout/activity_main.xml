@@ -29,21 +29,36 @@
                 android:layout_weight = "1"
                 android:gravity = "center">
 
-            <com.beardedhen.androidbootstrap.BootstrapButton
-                    android:text = "START"
-                    android:layout_width = "wrap_content"
-                    android:layout_height = "40dp"
-                    android:id = "@+id/btn_start"
-                    tools:ignore = "HardcodedText"
-                    app:bootstrapBrand = "success"
-                    app:bootstrapSize = "lg"
-                    app:roundedCorners = "true"
-                    app:buttonMode = "regular" />
+            <LinearLayout android:layout_width = "wrap_content"
+                          android:layout_height = "wrap_content"
+                          android:orientation = "vertical">
+                <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:text = "WORD"
+                        android:layout_width = "match_parent"
+                        android:layout_height = "40dp"
+                        android:layout_marginBottom = "10dp"
+                        android:id = "@+id/btn_word"
+                        tools:ignore = "HardcodedText"
+                        app:bootstrapBrand = "success"
+                        app:bootstrapSize = "lg"
+                        app:roundedCorners = "true"
+                        app:buttonMode = "regular" />
+                <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:text = "CONVERSATION"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "40dp"
+                        android:id = "@+id/btn_conversation"
+                        tools:ignore = "HardcodedText"
+                        app:bootstrapBrand = "success"
+                        app:bootstrapSize = "lg"
+                        app:roundedCorners = "true"
+                        app:buttonMode = "regular" />
+            </LinearLayout>
             <LinearLayout
                     android:orientation = "horizontal"
                     android:layout_width = "match_parent"
                     android:layout_height = "wrap_content"
-                    android:layout_marginVertical="10dp"
+                    android:layout_marginVertical = "10dp"
                     android:gravity = "center"
                     tools:ignore = "UnusedAttribute">
                 <Space android:layout_width = "0dip"

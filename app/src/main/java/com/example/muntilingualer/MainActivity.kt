@@ -1,9 +1,9 @@
 package com.example.muntilingualer
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.beardedhen.androidbootstrap.BootstrapButton
 
 class MainActivity : AppCompatActivity() {
@@ -20,9 +20,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         global = this.application as Global
 
-        val btn: BootstrapButton = findViewById(R.id.btn_start)
-        val intent = Intent(this, SelectCourseTypeActivity::class.java)
-        btn.setOnClickListener {
+        val btnWord: BootstrapButton = findViewById(R.id.btn_word)
+        val intent = Intent(this, SelectPracticeActivity::class.java)
+        btnWord.setOnClickListener {
+            global.gCourseId = "01"
+            startActivity(intent)
+        }
+
+        val btnConversation: BootstrapButton = findViewById(R.id.btn_conversation)
+        btnConversation.setOnClickListener {
+            global.gCourseId = "02"
             startActivity(intent)
         }
 
@@ -46,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == CODE_REQUEST) {
             if (resultCode == CODE_FROM) {
