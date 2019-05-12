@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.beardedhen.androidbootstrap.BootstrapButton
 
 @Suppress("NAME_SHADOWING")
 class PracticeActivity : AppCompatActivity() {
@@ -29,13 +30,13 @@ class PracticeActivity : AppCompatActivity() {
         frgmTransaction.add(R.id.view_practice, frgmArray[0])
         frgmTransaction.commit()
 
-        val btnAnswer = findViewById<Button>(R.id.btn_answer)
+        val btnAnswer = findViewById<BootstrapButton>(R.id.btn_answer)
         position = frgmArray.indexOf(currentFrgm)
         btnAnswer.setOnClickListener {
             frgmArray[position].showToText()
         }
 
-        val btnBack = findViewById<Button>(R.id.btn_list_back)
+        val btnBack = findViewById<BootstrapButton>(R.id.btn_list_back)
         btnBack.setOnClickListener {
             val frgmTransaction = supportFragmentManager.beginTransaction()
             position = frgmArray.indexOf(currentFrgm)
@@ -51,7 +52,7 @@ class PracticeActivity : AppCompatActivity() {
             }
         }
 
-        val btnNext = findViewById<Button>(R.id.btn_list_next)
+        val btnNext = findViewById<BootstrapButton>(R.id.btn_list_next)
         btnNext.setOnClickListener {
             val frgmTransaction = supportFragmentManager.beginTransaction()
             position = frgmArray.indexOf(currentFrgm)
