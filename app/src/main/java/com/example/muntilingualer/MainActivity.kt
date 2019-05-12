@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         BTN_LANG_FROM = findViewById(R.id.btn_lang_from)
         BTN_LANG_FROM.text = LANG_LIST[global.gFromLang]
         BTN_LANG_FROM.setOnClickListener {
+            intentLang.putExtra("btn_lang", global.gFromLang)
             intentLang.putExtra("btn_code", CODE_FROM)
             startActivityForResult(intentLang, CODE_REQUEST)
         }
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         BTN_LANG_TO = findViewById(R.id.btn_lang_to)
         BTN_LANG_TO.text = LANG_LIST[global.gToLang]
         BTN_LANG_TO.setOnClickListener {
+            intentLang.putExtra("btn_lang", global.gToLang)
             intentLang.putExtra("btn_code", CODE_TO)
             startActivityForResult(intentLang, CODE_REQUEST)
         }

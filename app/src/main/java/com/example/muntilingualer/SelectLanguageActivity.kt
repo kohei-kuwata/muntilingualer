@@ -1,6 +1,7 @@
 package com.example.muntilingualer
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.widget.AdapterView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.ListView as ListView1
@@ -18,6 +19,14 @@ class SelectLanguageActivity : AppCompatActivity() {
         val courses = getCourse("set")
         val courseAdapter = SelectPracticeAdapter(courses, this)
         lv.adapter = courseAdapter
+
+        lv.setOnKeyListener { v, keyCode, event ->
+            return@setOnKeyListener (keyCode == KeyEvent.KEYCODE_BACK && event.action == KeyEvent.ACTION_DOWN).apply {
+                intent.putExtra("LANG", intent.getStringExtra("btn_lang"))
+                setResult(intent.getIntExtra("btn_code", 0 ), intent)
+                finish()
+            }
+        }
 
         lv.onItemClickListener = AdapterView.OnItemClickListener(function = { _, _, i, _ ->
 
@@ -57,5 +66,4 @@ class SelectLanguageActivity : AppCompatActivity() {
 
         practiceItem["set"] = courseList
     }
-
 }
